@@ -7,13 +7,14 @@ import ContestCard from "./components/ContestCard";
 import Slide from "./components/Slide";
 import AboutPage from "./pages/About/AboutPage";
 import ProblemSet from "./pages/Problemset/ProblemSet";
+import Contest from "./pages/Contest/Contest";
 
 function HomePage() {
   return (
     <>
       <Slide /> 
       <main className="content">
-        <ContestCard
+        {/* <ContestCard
           title="MarisaOJ Contest - Round #0.25"
           posted="April 7, 2025, 4:06 a.m."
           description={`The next MarisaOJ Contest will take place on Monday, 07/04/2025 at 20:00 GMT+7!
@@ -21,7 +22,7 @@ The round consists of 6 problems in ICPC format, and you've got 2 hours and 30 m
 Join for fumo ▯,▯
 Join the Discord server here to get notified faster!`}
           author="bkac"
-        />
+        /> */}
 
         <ContestCard
           title="BACH KHOA CODE CHALLENGE #1 [KẾT THÚC & CÔNG BỐ GIẢI]"
@@ -62,6 +63,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/problem" element={<ProblemSet />} />
+        {/* <Route path="/announcement" element={<Announcement />} /> */}
+        <Route path="/contest" element={<Contest />} />
       </Routes>
     </Router>
   );
