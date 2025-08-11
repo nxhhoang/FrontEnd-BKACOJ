@@ -1,0 +1,36 @@
+.contest-card {
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+.contest-card h2 {
+  color: #3a6da0;
+}
+
+.posted {
+  font-size: 0.9em;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.description {
+  white-space: pre-wrap;
+  font-size: 1em;
+}
+
+.author {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+  color: gray;
+}
+
+img {
+  width: 60%;
+  text-align: center;
+  display: center;
+}

@@ -1,0 +1,76 @@
+.problemset-container {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.problemset-search {
+  margin-bottom: 10px;
+}
+
+.problemset-search input {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.problemset-header,
+.problemset-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 100px 80px 100px;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 12px;
+}
+
+.problemset-header {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+}
+
+.problemset-row {
+  border-bottom: 1px solid #eee;
+  height: 56px;
+}
+
+.problemset-row:hover {
+  background-color: #fafafa;
+}
+
+.col-id a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.problem-title {
+  color: #0077cc;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.problem-title:hover {
+  text-decoration: underline;
+}
+
+.tags {
+  font-size: 0.85rem;
+  color: #888;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.col-icons span {
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.col-score {
+  text-align: right;
+  font-weight: bold;
+}
+
+.col-author {
+  text-align: right;
+}

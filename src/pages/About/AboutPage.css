@@ -1,0 +1,54 @@
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  line-height: 1.6;
+  margin: 0;
+  padding: 24px;
+  background: #f7fafc;
+  color: #0f172a;
+  padding: 0;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(2, 6, 23, 0.08);
+}
+h1 {
+  margin-top: 0;
+  font-size: 28px;
+  color: #0b5cff;
+}
+h2 {
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: #0b4bd6;
+}
+p {
+  margin: 8px 0 16px;
+}
+ul {
+  margin: 8px 0 16px 20px;
+}
+li {
+  margin-bottom: 8px;
+  text-align: left;
+}
+.note {
+  background: #eef2ff;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #c7d2fe;
+  margin-top: 10px;
+}
+/* ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: left;
+  padding-inline-start: 0;
+  margin-block: 0;
+  height: 100%;
+} */

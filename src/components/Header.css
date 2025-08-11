@@ -1,0 +1,57 @@
+body {
+  padding: 0;
+}
+
+.header {
+  background-color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  width: 100%;     
+  box-sizing: border-box; 
+}
+
+.logo img {
+  max-width: 160px; 
+  max-height: 80px; 
+  height: auto;     
+  object-fit: contain;
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  cursor: pointer;
+}
+
+.user {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-link:visited {
+  color: inherit; 
+}
+
+.nav-link:hover {
+  color: #007acc; 
+}
+
+.nav-link:active {
+  color: inherit; 
+}
