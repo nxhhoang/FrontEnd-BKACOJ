@@ -27,10 +27,8 @@ function Header() {
           </li>
         </ul>
       </nav>
-      <div className="user">
-        <span>Hello <strong><a href="https://marisaoj.com/user/nxhhoang/submissions">nxhhoang!</a></strong></span>
-        <span>|</span>
-        <a href="#">Logout</a>
+      <div className="login-link">
+        <Link className="nav-link" to="/login">LOGIN</Link>
       </div>
     </header>
   );
