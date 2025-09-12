@@ -1,29 +1,38 @@
 // App.tsx
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import Header from "./components/Header";
-import Home from "./pages/Home/Home"
-import AboutPage from "./pages/AboutPage/AboutPage";
-import ProblemSet from "./pages/Problemset/Problemset";
-import Contest from "./pages/Contest/Contest";
-import LoginPage from "./pages/Login/Login";
-// import Announcement from "./pages/Announcement/Announcement";
-
+import Header from './components/Header'
+import Home from './pages/Home/Home'
+import AboutPage from './pages/AboutPage/AboutPage'
+import ProblemSet from './pages/Problemset/Problemset'
+import Contest from './pages/Contest/Contest'
+import Login from './pages/Login/Login'
+import Register from './pages/Register/Register'
+import NotFound from './pages/NotFound'
+import Announcement from './pages/Announcement/Announcement'
+import Footer from './components/Footer'
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/problem" element={<ProblemSet />} />
-        {/* <Route path="/announcement" element={<Announcement />} /> */}
-        <Route path="/contest" element={<Contest />} />
-        <Route path="/login" element={<LoginPage />} />
-      </Routes>
-    </Router>
-  );
+    <div className='flex flex-col min-h-screen'>
+      <Router>
+        <Header />
+        <main className='flex-grow'>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/about' element={<AboutPage />} />
+            <Route path='/problem' element={<ProblemSet />} />
+            <Route path='/announcement' element={<Announcement />} />
+            <Route path='/contest' element={<Contest />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+        </main>
+        <Footer />
+      </Router>
+    </div>
+  )
 }
 
-export default App;
+export default App

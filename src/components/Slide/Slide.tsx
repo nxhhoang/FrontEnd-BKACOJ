@@ -4,6 +4,7 @@ import "swiper/swiper-bundle.css";
 import sanbong from "../../assets/images/sanbong.jpeg";
 import slbk from "../../assets/images/slbk.jpg";
 import slbktv from "../../assets/images/slbktv.jpg";
+import { Link } from "react-router-dom";
 
 export default function Slide() {
   const slides = [
@@ -40,7 +41,7 @@ export default function Slide() {
                 href="#"
                 className="inline-block px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-md font-semibold transition"
               >
-                Get Started
+                <Link to='https://www.facebook.com/bk.algorithms.club/'>Facebook</Link>
               </a>
             </div>
           </div>

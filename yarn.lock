@@ -1112,7 +1112,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^19.1.10":
+"@types/react-linkify@npm:^1":
+  version: 1.0.4
+  resolution: "@types/react-linkify@npm:1.0.4"
+  dependencies:
+    "@types/react": "npm:*"
+  checksum: 10c0/0ccf4e6ece3731e6aed1a4c882787289019e169b4f9c9bb8857cd778a7e48454b3628fbaaa7a8fcb4bd6d212d51a076fe40eee29fab837ff52a3bba17768a8e1
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:*, @types/react@npm:^19.1.10":
   version: 19.1.12
   resolution: "@types/react@npm:19.1.12"
   dependencies:
@@ -2554,6 +2563,7 @@ __metadata:
     "@types/node": "npm:^24.3.1"
     "@types/react": "npm:^19.1.10"
     "@types/react-dom": "npm:^19.1.7"
+    "@types/react-linkify": "npm:^1"
     "@typescript-eslint/eslint-plugin": "npm:^8.43.0"
     "@typescript-eslint/parser": "npm:^8.43.0"
     "@vitejs/plugin-react": "npm:^5.0.0"
@@ -2573,6 +2583,7 @@ __metadata:
     react: "npm:^19.1.1"
     react-dom: "npm:^19.1.1"
     react-hook-form: "npm:^7.62.0"
+    react-linkify: "npm:^1.0.0-alpha"
     react-router-dom: "npm:^7.8.2"
     swiper: "npm:^12.0.1"
     tailwindcss: "npm:^4.1.13"
@@ -3426,6 +3437,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"linkify-it@npm:^2.0.3":
+  version: 2.2.0
+  resolution: "linkify-it@npm:2.2.0"
+  dependencies:
+    uc.micro: "npm:^1.0.1"
+  checksum: 10c0/640f926fa71d46f9451b4dc999c94b2dcad920abf5fe174a85f120b420cbb34b8f950e251846ed73db715ec9aaadadf1f2482d27088dddd21b1c84761f6a0b5a
+  languageName: node
+  linkType: hard
+
 "locate-path@npm:^6.0.0":
   version: 6.0.0
   resolution: "locate-path@npm:6.0.0"
@@ -4086,6 +4106,16 @@ __metadata:
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: 10c0/33977da7a5f1a287936a0c85639fec6ca74f4f15ef1e59a6bc20338fc73dc69555381e211f7a3529b8150a1f71e4225525b41b60b52965bda53ce7d47377ada1
+  languageName: node
+  linkType: hard
+
+"react-linkify@npm:^1.0.0-alpha":
+  version: 1.0.0-alpha
+  resolution: "react-linkify@npm:1.0.0-alpha"
+  dependencies:
+    linkify-it: "npm:^2.0.3"
+    tlds: "npm:^1.199.0"
+  checksum: 10c0/1ac770f16ea4d7452c2d90a5506e01b5bc0badd519ae89ff3159c65a3609c6600689db3fca70935af07fb6f56d85d63ee861459cc2257d13d935a2b629737a76
   languageName: node
   linkType: hard
 
@@ -4760,6 +4790,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tlds@npm:^1.199.0":
+  version: 1.260.0
+  resolution: "tlds@npm:1.260.0"
+  bin:
+    tlds: bin.js
+  checksum: 10c0/72ee1f17fd674efc17533272386c434c822bdbfc9e59234e2727214e8fe1d042b59935deb7476f3490fb83b540e2e40ebafc779cce02d47b5440dfdb429b3fdb
+  languageName: node
+  linkType: hard
+
 "to-regex-range@npm:^5.0.1":
   version: 5.0.1
   resolution: "to-regex-range@npm:5.0.1"
@@ -4891,6 +4930,13 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10c0/39117e346ff8ebd87ae1510b3a77d5d92dae5a89bde588c747d25da5c146603a99c8ee588c7ef80faaf123d89ed46f6dbd918d534d641083177d5fac38b8a1cb
+  languageName: node
+  linkType: hard
+
+"uc.micro@npm:^1.0.1":
+  version: 1.0.6
+  resolution: "uc.micro@npm:1.0.6"
+  checksum: 10c0/9bde2afc6f2e24b899db6caea47dae778b88862ca76688d844ef6e6121dec0679c152893a74a6cfbd2e6fde34654e6bd8424fee8e0166cdfa6c9ae5d42b8a17b
   languageName: node
   linkType: hard
 

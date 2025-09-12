@@ -8,10 +8,10 @@ interface ContestType {
   duration: string;
 }
 
-interface OtherContestType {
-  name: string;
-  link: string;
-}
+// interface OtherContestType {
+//   name: string;
+//   link: string;
+// }
 
 const Contest: React.FC = () => {
   const Contests: ContestType[] = [
@@ -33,10 +33,10 @@ const Contest: React.FC = () => {
     },
   ];
 
-  const otherContests: OtherContestType[] = [
-    { name: "Young Informatics Competition", link: "#" },
-    { name: "Duyên Hải Bắc Bộ", link: "#" },
-  ];
+  // const otherContests: OtherContestType[] = [
+  //   { name: "Young Informatics Competition", link: "#" },
+  //   { name: "Duyên Hải Bắc Bộ", link: "#" },
+  // ];
 
   return (
     <div className="flex gap-10 items-start max-w-6xl mx-auto p-5">
