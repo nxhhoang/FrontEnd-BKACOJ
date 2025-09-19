@@ -23,7 +23,7 @@ const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
   return (
     <div className="bg-white border border-gray-300 rounded-lg p-6 mb-6 shadow-md">
       {/* Title */}
-      <h2 className="text-2xl font-bold text-orange-600 mb-2">{title}</h2>
+      <h2 className="text-2xl font-bold text-blue-600 mb-2">{title}</h2>
 
       {/* Posted time */}
       <div className="text-sm text-gray-500 mb-4">📅 {posted}</div>
@@ -66,7 +66,7 @@ const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 py-2 rounded-lg shadow transition"
+            className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-medium px-6 py-2 rounded-lg shadow transition"
           >
             Form đăng ký
           </a>

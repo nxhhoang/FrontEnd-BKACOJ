@@ -15,22 +15,20 @@ import Footer from './components/Footer'
 function App() {
   return (
     <div className='flex flex-col min-h-screen'>
-      <Router>
-        <Header />
-        <main className='flex-grow'>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/about' element={<AboutPage />} />
-            <Route path='/problem' element={<ProblemSet />} />
-            <Route path='/announcement' element={<Announcement />} />
-            <Route path='/contest' element={<Contest />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/register' element={<Register />} />
-            <Route path='*' element={<NotFound />} />
-          </Routes>
-        </main>
-        <Footer />
-      </Router>
+      <Header />
+      <main className='flex-grow'>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<AboutPage />} />
+          <Route path='/problem' element={<ProblemSet />} />
+          <Route path='/announcement' element={<Announcement />} />
+          <Route path='/contest' element={<Contest />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </main>
+      <Footer />
     </div>
   )
 }

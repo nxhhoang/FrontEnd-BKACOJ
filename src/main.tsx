@@ -1,18 +1,32 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+import './index.css'
+import { BrowserRouter } from 'react-router-dom'
+// import 'src/i18n/i18n'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { AppProvider } from './contexts/app.context'
+import { HelmetProvider } from 'react-helmet-async'
 
-// Ép kiểu cho phần tử root (có thể null)
-const container = document.getElementById("root");
-if (!container) {
-  throw new Error("Root container not found. Did you forget to add <div id=\"root\"></div> in index.html?");
-}
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: 0
+    }
+  }
+})
 
-const root = ReactDOM.createRoot(container as HTMLElement);
-
-root.render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <App />
+    <HelmetProvider>
+      <BrowserRouter>
+        <QueryClientProvider client={queryClient}>
+          <AppProvider>
+            <App />
+          </AppProvider>
+        </QueryClientProvider>
+      </BrowserRouter>
+    </HelmetProvider>
   </React.StrictMode>
-);
+)

@@ -20,33 +20,29 @@ export default function Slide() {
       pagination={{ clickable: true }}
       navigation
       loop
-      className="w-full h-[90vh] relative"
+      className='w-full h-[90vh] relative'
     >
       {slides.map((s, i) => (
         <SwiperSlide key={i}>
-          <div
-            className="w-full h-full bg-cover bg-center relative"
-            style={{ backgroundImage: `url(${s.image})` }}
-          >
+          <div className='w-full h-full bg-cover bg-center relative' style={{ backgroundImage: `url(${s.image})` }}>
             {/* Overlay (làm tối nền) */}
-            <div className="absolute inset-0 bg-black/40" />
+            <div className='absolute inset-0 bg-black/40' />
 
             {/* Nội dung hiển thị trên slide */}
-            <div className="absolute top-1/5 left-20 text-white z-10">
-            <div className="absolute -inset-4 bg-black/50 rounded-md -z-10"></div>
-              <h1 className="text-3xl md:text-5xl font-bold mb-4 drop-shadow-lg">
-                Welcome to BKAC OJ
-              </h1>
-              <a
-                href="#"
-                className="inline-block px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-md font-semibold transition"
+            <div className='absolute top-1/5 left-20 text-white z-10'>
+              <div className='absolute -inset-4 bg-black/50 rounded-md -z-10'></div>
+              <h1 className='text-3xl md:text-5xl font-bold mb-4 drop-shadow-lg'>Welcome to BKAC OJ</h1>
+              <Link
+                to='https://www.facebook.com/bk.algorithms.club/'
+                target='_blank'
+                className='inline-block px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-md font-semibold transition'
               >
-                <Link to='https://www.facebook.com/bk.algorithms.club/'>Facebook</Link>
-              </a>
+                Facebook
+              </Link>
             </div>
           </div>
         </SwiperSlide>
       ))}
     </Swiper>
-  );
+  )
 }
