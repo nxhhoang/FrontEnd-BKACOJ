@@ -1,16 +1,24 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-import sanbong from "../../assets/images/sanbong.jpeg";
-import slbk from "../../assets/images/slbk.jpg";
-import slbktv from "../../assets/images/slbktv.jpg";
+// import sanbong from "../../assets/images/sanbong.jpeg";
+// import slbk from "../../assets/images/slbk.jpg";
+// import slbktv from "../../assets/images/slbktv.jpg";
+import Regional2020 from "../../assets/images/Regional2020.jpg";
+import Regional2022 from "../../assets/images/Regional2022.jpg";
+import Regional2023 from "../../assets/images/Regional2023.jpg";
+import Regional2024 from "../../assets/images/Regional2024.jpg";
 import { Link } from "react-router-dom";
 
 export default function Slide() {
   const slides = [
-    { image: sanbong },
-    { image: slbk },
-    { image: slbktv },
+    // { image: sanbong },
+    // { image: slbk },
+    // { image: slbktv },
+    { image: Regional2020},
+    { image: Regional2022},
+    { image: Regional2023},
+    { image: Regional2024},
   ];
 
   return (

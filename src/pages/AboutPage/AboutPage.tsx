@@ -1,64 +1,37 @@
 // AboutPage.tsx
 import React from "react";
-import aboutJPG from '../../assets/images/about.jpg'
+import aboutJPG from '../../assets/images/about.jpg';
 
 const AboutPage: React.FC = () => {
   return (
-    <div className='container' style={{ textAlign: 'center', padding: '20px' }}>
-      <img src={aboutJPG} alt='Giới thiệu' className='mx-auto max-w-full h-auto' />
-      <h1>Giới thiệu về chúng tôi</h1>
-      <p>
-        <strong>Codeforces</strong> là một nền tảng trực tuyến chuyên về lập trình thi đấu (competitive programming),
-        được nhiều lập trình viên và sinh viên trên toàn thế giới sử dụng để rèn luyện kỹ năng thuật toán và giải quyết
-        vấn đề.
+    <div className="container mx-auto px-4 py-10 text-center">
+      {/* Banner image */}
+      <img
+        src={aboutJPG}
+        alt="Giới thiệu BK Algorithms Club"
+        className="mx-auto mb-8 rounded-lg shadow-lg max-h-[400px] w-full object-cover"
+      />
+
+      {/* Club name */}
+      <h1 className="text-3xl font-bold mb-4">BK Algorithms Club</h1>
+
+      {/* Description */}
+      <p className="text-lg mb-6 max-w-3xl mx-auto text-justify">
+        BK Algorithms Club là sân chơi dành cho các bạn yêu thích <strong>giải thuật, thuật toán và competitive programming</strong>. 
+        Chúng tôi cùng nhau thảo luận các thuật toán từ cơ bản đến nâng cao, giải quyết các bài toán khó và chuẩn bị cho các cuộc thi lập trình trong và ngoài nước.
       </p>
-      <h2>Điểm nổi bật</h2>
-      <ul>
-        <li>
-          <strong>Ra đời và quản lý:</strong>
-          <p>
-            Codeforces được sáng lập năm 2010 bởi Mike Mirzayanov, hiện được vận hành bởi một nhóm phát triển ở Nga và
-            cộng đồng lập trình viên toàn cầu.
-          </p>
-        </li>
-        <li>
-          <strong>Hệ thống thi đấu:</strong>
-          <p>
-            Tổ chức <em>contest</em> thường xuyên (thường 1–2 lần mỗi tuần). Các cuộc thi phổ biến gồm{' '}
-            <em>Codeforces Round</em>, <em>Educational Round</em>, và các sự kiện đặc biệt. Thời gian thi thường ngắn
-            (khoảng 2 giờ) với 5–8 bài từ dễ đến khó.
-          </p>
-        </li>
-        <li>
-          <strong>Hệ thống xếp hạng:</strong>
-          <p>
-            Người dùng có <em>rating</em> và <em>rank</em> (Newbie, Pupil, Specialist, Expert, Candidate Master, Master,
-            Grandmaster, International Grandmaster, Legendary Grandmaster). Rating thay đổi dựa trên kết quả thi so với
-            các thí sinh khác.
-          </p>
-        </li>
-        <li>
-          <strong>Kho bài tập phong phú:</strong>
-          <p>
-            Mỗi bài thường có phần <em>editorial</em> (lời giải chính thức). Người dùng có thể <em>upsolve</em> (làm lại
-            bài của contest đã kết thúc) để luyện tập.
-          </p>
-        </li>
-        <li>
-          <strong>Tính năng cộng đồng:</strong>
-          <p>
-            Blog và thảo luận về thuật toán, kinh nghiệm thi đấu; người dùng có thể theo dõi, nhắn tin, hoặc xem lịch sử
-            thi đấu của nhau.
-          </p>
-        </li>
-        <li>
-          <strong>Ngôn ngữ hỗ trợ:</strong>
-          <p>
-            Hỗ trợ nhiều ngôn ngữ như C++, Python, Java, Kotlin, Rust, Go, ... Môi trường chấm tự động đưa ra kết quả
-            như AC, WA, TLE, MLE.
-          </p>
-        </li>
-      </ul>
+
+      {/* Activities */}
+      <div className="mb-6 max-w-3xl mx-auto text-left">
+        <h2 className="text-2xl font-semibold mb-2">Hoạt động chính:</h2>
+        <ul className="list-disc list-inside space-y-1">
+          <li>Thảo luận thuật toán và cấu trúc dữ liệu.</li>
+          <li>Giải quyết các bài toán nâng cao từ sách và trang lập trình trực tuyến.</li>
+          <li>Luyện tập và thi đấu nội bộ, chuẩn bị cho các cuộc thi như ICPC.</li>
+          <li>Chia sẻ kinh nghiệm và mẹo lập trình hiệu quả.</li>
+        </ul>
+      </div>
+
     </div>
   )
 };

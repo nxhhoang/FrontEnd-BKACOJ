@@ -19,7 +19,7 @@ export const getRules = (getValues?: UseFormGetValues<any>): Rules => ({
       message: 'Username tối đa 30 ký tự'
     },
     pattern: {
-      value: /^(?=.*[a-zA-Z])[a-zA-Z0-9_]+$/,
+      value: /^(?=.*[a-zA-Z])[a-zA-Z0-9_-]+$/,
       message: 'Username phải chứa ít nhất 1 chữ cái và chỉ được chứa chữ, số, dấu gạch dưới'
     }
   },
@@ -97,7 +97,9 @@ export const schema = yup.object({
     .string()
     .required('Username là bắt buộc')
     .min(3, 'Username tối thiểu 3 ký tự')
-    .max(30, 'Username tối đa 30 ký tự'),
+    .max(30, 'Username tối đa 30 ký tự')
+    .matches(/^(?=.*[a-zA-Z])[a-zA-Z0-9_-]+$/,
+      'Username chỉ được chứa chữ, số và dấu gạch dưới (3-30 ký tự)'),
   email: yup
     .string()
     .required('Email là bắt buộc')

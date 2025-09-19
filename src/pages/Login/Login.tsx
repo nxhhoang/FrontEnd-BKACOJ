@@ -32,7 +32,7 @@ const Login: React.FC = () => {
   })
 
   const loginMutation = useMutation({
-    mutationFn: (body: Omit<FormData, 'confirm_password'>) => authApi.login(body)
+    mutationFn: (body: FormData) => authApi.login(body)
   })
 
   const onSubmit = handleSubmit((data) => {
@@ -59,13 +59,13 @@ const Login: React.FC = () => {
   })
 
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen bg-gray-100'>
+    <div className='flex flex-col items-center justify-center bg-gray-100'>
       <Helmet>
         <title>Đăng nhập | BKAC</title>
         <meta name='description' content='Đăng nhập vào BKAC' />
       </Helmet>
       <div className='flex flex-col items-center justify-center min-h-[80vh] bg-gray-100'>
-        <h2 className='text-2xl font-bold mb-6 text-center'>Login</h2>
+        <h2 className='text-2xl font-bold mb-6 text-center'>Đăng nhập</h2>
         <form className='flex flex-col w-80 bg-white p-6 rounded-xl shadow-md' onSubmit={onSubmit}>
           <Input
             name='username'

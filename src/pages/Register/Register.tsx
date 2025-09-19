@@ -60,13 +60,13 @@ const Login: React.FC = () => {
   })
 
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen bg-gray-100'>
+    <div className='flex flex-col items-center justify-center bg-gray-100'>
       <Helmet>
         <title>Đăng ký | BKAC</title>
         <meta name='description' content='Đăng ký tài khoản vào BKAC' />
       </Helmet>
       <div className='flex flex-col items-center justify-center min-h-[80vh] bg-gray-100'>
-        <h2 className='text-2xl font-bold mb-6 text-center'>Register</h2>
+        <h2 className='text-2xl font-bold mb-6 text-center'>Đăng ký</h2>
         <form className='flex flex-col w-80 bg-white p-6 rounded-xl shadow-md' onSubmit={onSubmit}>
           <Input
             name='username'
@@ -106,7 +106,7 @@ const Login: React.FC = () => {
           <div className='mt-8 flex items-center justify-center'>
             <span className='text-gray-400'>Bạn đã có tài khoản?</span>
             <Link to='/Login' className='ml-1 text-blue-600 hover:text-blue-800 visited:text-purple-600'>
-              Log In
+              Đăng nhập
             </Link>
           </div>
         </form>
