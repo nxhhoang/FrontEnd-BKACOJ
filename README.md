@@ -68,8 +68,4 @@ frontend-onlinejudge/
 │   │       └── User.tsx
 │   └── routes/
 │       └── index.tsx        
-```
-
-
-## Use-case Diagram
-![Use-case Diagram](./src/assets/images/UseCaseDiagram.drawio.png)
+``

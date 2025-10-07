@@ -1,42 +1,27 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Search, ChevronLeft, ChevronRight} from "lucide-react";
 import { Link } from "react-router-dom";
-// import problemApi from "../api/problem.api";
-import { fetchProblems } from "./fakeProblemData/fakeProblemData";
-import type { Problem } from "../../types/problem.type";
+import { useProblems } from './../../hooks/useProblems';
 
 
 export default function Problemset() {
-  const [problems, setProblems] = useState<Problem[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [search, setSearch] = useState("");
-  const [hideSolved, setHideSolved] = useState(false);
-  const [hasEditorial, setHasEditorial] = useState(false);
-  const [showTypes, setShowTypes] = useState(false);
+  const { data: problems, isLoading, isError } = useProblems()
+  const [search, setSearch] = useState("")
+  const [hideSolved, setHideSolved] = useState(false)
+  const [hasEditorial, setHasEditorial] = useState(false)
+  const [showTypes, setShowTypes] = useState(false)
 
-  // Filter problems based on search and checkboxes
-  const filteredProblems = problems.filter((p) => {
+  // Filter
+  const filteredProblems = (problems ?? []).filter((p) => {
     if (!search) return true
-
     const searchLower = search.toLowerCase()
     const nameMatch = p.name.toLowerCase().includes(searchLower)
-    const idMatch = String(p['problem-id']).includes(searchLower)
-
+    const idMatch = String(p['problem-id']).includes(searchLower);
     return nameMatch || idMatch
   })
 
-  useEffect(() => {
-    ;(async () => {
-      const data = await fetchProblems()
-      setProblems(data)
-      setLoading(false)
-    })()
-  }, [])
-
-  if (loading) {
-    return <div className="p-6">Đang tải danh sách bài toán...</div>;
-  }
-  console.log(problems)
+  if (isLoading) return <div className="p-6">Đang tải danh sách bài toán...</div>
+  if (isError) return <div className="p-6">Lỗi khi tải danh sách bài toán</div>
 
   return (
     <div className='p-6 bg-gray-50 min-h-screen'>

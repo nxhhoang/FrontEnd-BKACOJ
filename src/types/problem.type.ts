@@ -1,16 +1,3 @@
-export type ProblemTypes = 
-  | 'ICPC' 
-  | 'IOI' 
-  | 'OI' 
-  | 'CF' 
-  | 'AtCoder' 
-  | 'LeetCode' 
-  | 'HDU' 
-  | 'POJ' 
-  | 'UVA' 
-  | 'Other';
-
-
 export interface Problem {
   ID: string
   "problem-id": number
