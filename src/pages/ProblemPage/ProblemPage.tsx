@@ -19,11 +19,9 @@ export default function ProblemPage() {
       const problemIdNum = Number(problemId);
 
       try {
-        // 1️⃣ Lấy problem.json
         const resJSON = await problemApi.getProblemDetail(problemIdNum, "problem.json", "json");
         setProblem(resJSON.data);
 
-        // 2️⃣ Lấy statement.pdf
         const resPDF = await problemApi.getProblemDetail<Blob>(problemIdNum, "statement.pdf", "blob");
         const url = window.URL.createObjectURL(resPDF.data);
         setPdfUrl(url);
