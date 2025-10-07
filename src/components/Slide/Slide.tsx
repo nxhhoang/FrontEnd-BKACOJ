@@ -28,6 +28,7 @@ export default function Slide() {
       pagination={{ clickable: true }}
       navigation
       loop
+      speed={2000}
       className='w-full h-[90vh] relative'
     >
       {slides.map((s, i) => (
