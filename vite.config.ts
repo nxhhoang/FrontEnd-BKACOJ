@@ -13,5 +13,17 @@ export default defineConfig({
     alias: {
       src: path.resolve(__dirname, './src')
     }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name?.endsWith('.pdf')) {
+            return 'assets/[name].[ext]'; 
+          }
+          return 'assets/[name]-[hash].[ext]';
+        }
+      }
+    }
   }
 })
