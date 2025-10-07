@@ -11,6 +11,7 @@ import Register from './pages/Register/Register'
 import NotFound from './pages/NotFound'
 import Announcement from './pages/Announcement/Announcement'
 import Footer from './components/Footer'
+import ProblemPage from "./pages/ProblemPage/ProblemPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<AboutPage />} />
           <Route path='/problem' element={<ProblemSet />} />
+          <Route path="/problem/:problemId" element={<ProblemPage />} />
           <Route path='/announcement' element={<Announcement />} />
           <Route path='/contest' element={<Contest />} />
           <Route path='/login' element={<Login />} />
