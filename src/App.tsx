@@ -1,37 +1,39 @@
-// App.tsx
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import useRouteElements from './useRouteElements'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { useEffect, useContext } from 'react'
+import { LocalStorageEventTarget } from './utils/auth'
+import { AppContext } from './contexts/app.context'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import ErrorBoundary from './components/ErrorBoundary'
+import { HelmetProvider } from 'react-helmet-async'
 
-import Header from './components/Header'
-import Home from './pages/Home/Home'
-import AboutPage from './pages/AboutPage/AboutPage'
-import ProblemSet from './pages/Problemset/Problemset'
-import Contest from './pages/Contest/Contest'
-import Login from './pages/Login/Login'
-import Register from './pages/Register/Register'
-import NotFound from './pages/NotFound'
-import Announcement from './pages/Announcement/Announcement'
-import Footer from './components/Footer'
-import ProblemPage from "./pages/ProblemPage/ProblemPage";
+/**
+ * Khi url thay đổi thì các component nào dùng các hook như
+ * useRoutes, useParmas, useSearchParams,...
+ * sẽ bị re-render.
+ * Ví dụ component `App` dưới đây bị re-render khi mà url thay đổi
+ * vì dùng `useRouteElements` (đây là customhook của `useRoutes`)
+ */
 
 function App() {
+  const routeElements = useRouteElements()
+  const { reset } = useContext(AppContext)
+  useEffect(() => {
+    LocalStorageEventTarget.addEventListener('clearLS', reset)
+    return () => {
+      LocalStorageEventTarget.removeEventListener('clearLS', reset)
+    }
+  }, [reset])
+
   return (
-    <div className='flex flex-col min-h-screen'>
-      <Header />
-      <main className='flex-grow'>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<AboutPage />} />
-          <Route path='/problem' element={<ProblemSet />} />
-          <Route path="/problem/:problemId" element={<ProblemPage />} />
-          <Route path='/announcement' element={<Announcement />} />
-          <Route path='/contest' element={<Contest />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='*' element={<NotFound />} />
-        </Routes>
-      </main>
-      <Footer />
-    </div>
+    <HelmetProvider>
+      <ErrorBoundary>
+        {routeElements}
+        <ToastContainer />
+      </ErrorBoundary>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </HelmetProvider>
   )
 }
 
