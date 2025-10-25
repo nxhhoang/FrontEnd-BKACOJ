@@ -13,17 +13,16 @@ const Home = lazy(() => import('./pages/Home'))
 const Login = lazy(() => import('./pages/Login'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 const ProblemDetail = lazy(() => import('./pages/ProblemPage'))
+const ProblemSubmission = lazy(() => import('./pages/ProblemSubmission'))
+const Submit = lazy(() => import('./pages/SubmitPage'))
+const SubmissionDetail = lazy(() => import('./pages/SubmissionDetail'))
 const Problemset = lazy(() => import('./pages/Problemset'))
 const Register = lazy(() => import('./pages/Register'))
 // const Profile = lazy(() => import('./pages/User/pages/Profile'))
 // const ChangePassword = lazy(() => import('./pages/User/pages/ChangePassword'))
 // const HistoryPurchase = lazy(() => import('./pages/User/pages/HistoryPurchase'))
 
-// eslint-disable-next-line react-refresh/only-export-components
-// function ProtectedRoute() {
-//   const { isAuthenticated } = useContext(AppContext)
-//   return isAuthenticated ? <Outlet /> : <Navigate to='/login' />
-// }
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 
 // eslint-disable-next-line react-refresh/only-export-components
 function RejectedRoute() {
@@ -116,6 +115,32 @@ export default function useRouteElements() {
             </Suspense>
           )
         },
+        
+        { // Sau khi làm Auth api phải chuyển cái này vô ProtectedRoute
+          path: path.problemAllSubmissions,
+          element: (
+            <Suspense fallback={<div>Loading submissions...</div>}>
+              <ProblemSubmission />
+            </Suspense>
+          )
+        },
+        { // Sau khi làm Auth api phải chuyển cái này vô ProtectedRoute
+          path: path.submit,
+          element: (
+            <Suspense fallback={<div>Loading ...</div>}>
+              <Submit />
+            </Suspense>
+          )
+        },
+        { // Sau khi làm Auth api phải chuyển cái này vô ProtectedRoute
+          path: path.submissionDetail,
+          element: (
+            <Suspense fallback={<div>Loading ...</div>}>
+              <SubmissionDetail />
+            </Suspense>
+          )
+        },
+
         {
           path: path.problemset,
           element: (

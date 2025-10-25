@@ -2,7 +2,7 @@ export interface SubmitRequest {
   problem_id?: string | null
   code: string
   language: string
-  submission_type: 'ICPC' | 'CUSTOM'
+  submission_type: 'ICPC' | ''
 }
 
 export interface SubmitResponse {
@@ -34,9 +34,30 @@ export interface SubmissionDetail {
   eval_status: string
 }
 
-export interface ProblemSubmissions {
-  Submissions: SubmissionDetail[]
+export interface SubmissionOfProblem {
+  username: string
+  submission_id: string
+  problem_id: string
+  timestamp: string
+  language: string
+  verdict: string
+  verdict_case: string[]
+  cpu_time: number
+  cpu_time_case: number[]
+  memory_usage: string
+  memory_usage_case: string[]
+  n_success: number
+  outputs: string[]
+  points: number
+  points_case: number[]
+  message: string
+  eval_status: string
 }
+
+export interface ProblemSubmissions {
+  Submissions: SubmissionOfProblem[]
+}
+
 
 export interface SubmissionWSMessage {
   username: string

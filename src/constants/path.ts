@@ -5,7 +5,15 @@ const path = {
   changePassword: '/user/password',
   userSubmissions: '/user/submissions',
 
-  submissionDetail: '/submissions/:submissionId',
+  //
+  problemAllSubmissions: '/problem/:problemId/all-submissions',
+  problemBestSubmissions: '/problem/:problemId/best-submissions',
+  problemMySubmissions: '/problem/:problemId/my-submissions',
+  //
+  
+  submit: '/submit/:problemId',
+  submissionDetail: '/submission/:submissionId',
+  submissionProblem: '/problems/:problemId/submissions',
   submissionProblemDetail: '/problems/:problemId/submissions/:submissionId',
   
   login: '/login',

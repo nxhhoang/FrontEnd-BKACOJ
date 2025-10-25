@@ -17,7 +17,7 @@ async function fetchProblems(): Promise<Problem[]> {
   return problems
 }
 
-export function useProblems() {
+export function useProblemList() {
   return useQuery<Problem[], Error>({
     queryKey: ['problems'],
     queryFn: fetchProblems,
