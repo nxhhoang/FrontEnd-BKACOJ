@@ -6,7 +6,9 @@ const URL = '/api/v1/submission'
 
 const submissionApi = {
   submit(data: SubmitRequest) {
-    return http.post<SuccessResponse<SubmitResponse>>(`${URL}/submit`, data)
+    const response = http.post<SuccessResponse<SubmitResponse>>(`${URL}/submit`, data)
+    console.log(response)
+    return response
   },
 
   getSubmissionDetail(submissionId: string) {
@@ -14,10 +16,14 @@ const submissionApi = {
   },
 
   getSubmissionsByProblem(problemId: string) {
-    return http.get<SuccessResponse<ProblemSubmissions>>(`${URL}/problem/${problemId}`)
+    // console.log('Fetching submissions for problemId:', problemId)
+    const data = http.get<SuccessResponse<ProblemSubmissions>>(`${URL}/problem/view/${problemId}`)
+    // console.log(data)
+    return data
   },
 
   getSubmissionUpdatesWs(username?: string, problemId?: string, submissionId?: string) {
+    // eslint-disable-next-line prefer-const
     let query = []
     if (username) query.push(`username=${username}`)
     if (problemId) query.push(`problem_id=${problemId}`)

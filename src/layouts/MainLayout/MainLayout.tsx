@@ -1,16 +1,19 @@
 import { memo } from 'react'
 import { Outlet } from 'react-router-dom'
-import Footer from 'src/components/Footer'
-import Header from 'src/components/Header'
+import Footer from '../../components/Footer'
+import Header from '../../components/Header'
 interface Props {
   children?: React.ReactNode
 }
 function MainLayoutInner({ children }: Props) {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      {children}
-      <Outlet />
+      {/* Phần content sẽ chiếm không gian còn lại */}
+      <main className="flex-1">
+        {children}
+        <Outlet />
+      </main>
       <Footer />
     </div>
   )

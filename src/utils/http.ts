@@ -28,8 +28,11 @@ export class Http {
   private refreshToken: string
   private refreshTokenRequest: Promise<string> | null
   constructor() {
-    this.accessToken = getAccessTokenFromLS()
-    this.refreshToken = getRefreshTokenFromLS()
+    this.accessToken = getAccessTokenFromLS() || "khong co access token"
+    this.refreshToken = getRefreshTokenFromLS() || "khong co refresh token"
+    console.log('Initial access token:', this.accessToken)
+    console.log('Initial refresh token:', this.refreshToken)
+    
     this.refreshTokenRequest = null
     this.instance = axios.create({
       baseURL: config.baseUrl,

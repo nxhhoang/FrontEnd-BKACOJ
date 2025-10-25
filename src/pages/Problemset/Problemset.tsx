@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Search, ChevronLeft, ChevronRight} from "lucide-react";
 import { Link } from "react-router-dom";
-import { useProblems } from './../../hooks/useProblems';
+import { useProblemList } from '../../hooks/useProblemLists';
 
 
 export default function Problemset() {
-  const { data: problems, isLoading, isError } = useProblems()
+  const { data: problems, isLoading, isError } = useProblemList()
   const [search, setSearch] = useState("")
   const [hideSolved, setHideSolved] = useState(false)
   const [hasEditorial, setHasEditorial] = useState(false)
@@ -24,7 +24,7 @@ export default function Problemset() {
   if (isError) return <div className="p-6">Lỗi khi tải danh sách bài toán</div>
 
   return (
-    <div className='p-6 bg-gray-50 min-h-screen'>
+    <div className='p-6 bg-gray-50'>
       <h1 className='text-2xl font-bold mb-4'>Problem list</h1>
 
       <div className='grid grid-cols-4 gap-6'>

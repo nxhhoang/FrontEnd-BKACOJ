@@ -53,3 +53,13 @@ export const getIdFromNameId = (nameId: string) => {
 }
 
 export const getAvatarUrl = (avatarName?: string) => (avatarName ? `${config.baseUrl}images/${avatarName}` : userImage)
+
+export function escapeString(input: string): string {
+  if (!input) return "";
+  return input
+    .replace(/\\/g, "\\\\")  // escape dấu backslash
+    .replace(/\r/g, "\\r")   // escape ký tự xuống hàng kiểu Windows
+    .replace(/\n/g, "\\n")   // escape newline
+    .replace(/\t/g, "\\t")   // escape tab
+    .replace(/\"/g, '\\"');  // escape dấu "
+}
