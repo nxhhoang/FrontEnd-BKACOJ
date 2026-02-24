@@ -2,7 +2,7 @@ import type { SubmitRequest, SubmitResponse, SubmissionDetail, ProblemSubmission
 import type { SuccessResponse } from '../types/utils.type'
 import http from '../utils/http'
 
-const URL = '/api/v1/submission'
+const URL = 'api/v1/submission'
 
 const submissionApi = {
   submit(data: SubmitRequest) {
