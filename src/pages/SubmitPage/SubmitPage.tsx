@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Editor from "@monaco-editor/react";
 import { useSubmit } from '../../hooks/useSubmit'
 import { escapeString } from '../../utils/utils'
 import { Loader2 } from 'lucide-react'
@@ -13,6 +14,16 @@ const languages = [
   { id: 'pypy3', name: 'PyPy 3' },
   { id: 'python3', name: 'Python 3' }
 ]
+
+function detectEditorLanguage(lang: string) {
+  if (!lang) return "plaintext";
+
+  if (lang.startsWith("cpp")) return "cpp";
+  if (lang.startsWith("py")) return "python";
+  if (lang === "pypy3") return "python";
+
+  return "plaintext";
+}
 
 export default function SubmitPage() {
   const { problemId } = useParams()
@@ -89,12 +100,19 @@ export default function SubmitPage() {
       {/* Code editor */}
       <div className='mb-6'>
         <label className='block font-semibold text-gray-700 mb-2'>Source Code</label>
-        <textarea
+        <Editor
+          height='500px'
+          language={detectEditorLanguage(language)}
           value={code}
-          onChange={(e) => setCode(e.target.value)}
-          rows={18}
-          spellCheck={false}
-          className='w-full font-mono text-sm p-3 border rounded-lg bg-gray-50 focus:ring focus:ring-blue-300'
+          theme='vs-dark'
+          onChange={(value) => setCode(value || '')}
+          options={{
+            fontSize: 14,
+            minimap: { enabled: false },
+            automaticLayout: true,
+            tabSize: 2,
+            scrollBeyondLastLine: false
+          }}
         />
       </div>
 
